@@ -79,9 +79,9 @@ Create a basic Express server:
 Create a file named server.js:
 javascript
 
-const express = require('express');
-const app = express();
-const cors = require('cors');
+const express = require('express'); // Import the Express framework
+const app = express(); // Create an instance of an Express application
+const cors = require('cors'); // Import CORS to allow cross-origin requests
 
 app.use(cors());
 app.use(express.json());
@@ -92,7 +92,7 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${port}`); // Start the server and log the port number
 });
 
 Start the server:
@@ -114,7 +114,7 @@ createdb hotel_reservation_db
 Create a db.js file in your backend folder to connect to the PostgreSQL database:
 javascript
 
-const { Pool } = require('pg');
+const { Pool } = require('pg'); // Load the PostgreSQL library
 const pool = new Pool({
   user: 'yourUsername',
   host: 'localhost',
@@ -132,7 +132,7 @@ const pool = require('./db');
 
 app.get('/rooms', async (req, res) => {
   try {
-    const rooms = await pool.query('SELECT * FROM rooms');
+    const rooms = await pool.query('SELECT * FROM rooms'); // Execute SQL query to select all rooms
     res.json(rooms.rows);
   } catch (err) {
     console.error(err.message);
