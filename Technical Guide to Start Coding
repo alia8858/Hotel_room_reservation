@@ -1,4 +1,4 @@
-*********
+***********
 1. Set Up our Development Environment
 For Web (React.js)
 Prerequisites: Make sure we have Node.js and npm (Node Package Manager) installed on our computer.
@@ -7,7 +7,7 @@ For Mobile (React Native)
 Install React Native CLI or use Expo for a smoother development process (especially for beginners).
 Follow the setup guide on the official React Native documentation.
 
-*********
+***********
 2. Create the First Project
 For the Web (React.js)
 Open our terminal and run the following command to create a new React project:
