@@ -1,57 +1,84 @@
-1. Set Up Your Development Environment
+*********
+1. Set Up our Development Environment
 For Web (React.js)
-Prerequisites: Make sure you have Node.js and npm (Node Package Manager) installed on your computer.
+Prerequisites: Make sure we have Node.js and npm (Node Package Manager) installed on our computer.
 Install Node.js here.
 For Mobile (React Native)
 Install React Native CLI or use Expo for a smoother development process (especially for beginners).
 Follow the setup guide on the official React Native documentation.
+
+*********
 2. Create the First Project
 For the Web (React.js)
-Open your terminal and run the following command to create a new React project:
+Open our terminal and run the following command to create a new React project:
+
 bash
-Copy code
+
 npx create-react-app hotel-reservation-app
+
 Navigate to the project directory:
+
 bash
-Copy code
+
 cd hotel-reservation-app
-Start the development server to view your app:
+
+Start the development server to view our app:
+
 bash
-Copy code
+
 npm start
-Open the browser and visit http://localhost:3000. You should see the default React landing page.
+
+Open the browser and visit http://localhost:3000. We should see the default React landing page
+
 For Mobile (React Native)
 Run the following command to create a new React Native project using Expo (recommended for beginners):
+
 bash
-Copy code
+
+
 npx create-expo-app hotel-reservation-app
+
 Navigate to the project directory:
+
 bash
-Copy code
+
+
 cd hotel-reservation-app
+
 Start the development server:
 bash
-Copy code
+
+
 npx expo start
-Use your phone (with the Expo app installed) to scan the QR code, or run the app on an Android/iOS emulator.
+
+Use our phone (with the Expo app installed) to scan the QR code, or run the app on an Android/iOS emulator.
+
+***********
 3. Set Up Backend (Node.js with Express)
-Open your terminal and create a directory for your back-end server:
+Open terminal and create a directory for our back-end server:
+
 bash
-Copy code
+
+
 mkdir hotel-reservation-backend
 cd hotel-reservation-backend
+
 Initialize the project:
 bash
-Copy code
+
+
 npm init -y
+
 Install Express.js and other dependencies:
 bash
-Copy code
+
 npm install express pg cors body-parser dotenv
+
 Create a basic Express server:
+
 Create a file named server.js:
 javascript
-Copy code
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -67,20 +94,26 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
 Start the server:
 bash
-Copy code
+
 node server.js
+
 Open the browser and go to http://localhost:5000 to see the welcome message.
+
+*********
 4. Database Setup (PostgreSQL)
-Install PostgreSQL on your machine if you haven’t already.
+Install PostgreSQL on our machine if you haven’t already.
+
 Create a new database for the project:
 bash
-Copy code
+
 createdb hotel_reservation_db
+
 Create a db.js file in your backend folder to connect to the PostgreSQL database:
 javascript
-Copy code
+
 const { Pool } = require('pg');
 const pool = new Pool({
   user: 'yourUsername',
@@ -91,9 +124,10 @@ const pool = new Pool({
 });
 
 module.exports = pool;
+
 In your server.js, use this connection to query the database:
 javascript
-Copy code
+
 const pool = require('./db');
 
 app.get('/rooms', async (req, res) => {
@@ -104,10 +138,11 @@ app.get('/rooms', async (req, res) => {
     console.error(err.message);
   }
 });
+
 5. Build the First Page (React.js)
 Open src/App.js and replace the content with:
 jsx
-Copy code
+
 import React from 'react';
 
 function App() {
@@ -120,19 +155,26 @@ function App() {
 }
 
 export default App;
+
 Run the app using:
 bash
-Copy code
+
+
 npm start
+
 You should now see a "Hotel Reservation System" message on the web page.
+
+********
 6. Connect Front-end and Back-end
 In the React front-end, install Axios for HTTP requests:
 bash
-Copy code
+
+
 npm install axios
 Make a request to the backend to get data:
 javascript
-Copy code
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -158,9 +200,13 @@ function App() {
 }
 
 export default App;
+
+********
 7. Additional Features (Authentication, Payments, etc.)
 For authentication, use JWT (JSON Web Token) on the backend and create secure login/signup pages on the front-end.
 For payments, integrate with Stripe or PayPal SDK. Follow their documentation to add secure payment options.
+
+
 Summary of Development Steps:
 Set up environment (Node.js, React, React Native).
 Create the front-end (React.js for web, React Native for mobile).
