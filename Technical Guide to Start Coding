@@ -169,11 +169,9 @@ You should now see a "Hotel Reservation System" message on the web page.
 In the React front-end, install Axios for HTTP requests:
 bash
 
-
 npm install axios
 Make a request to the backend to get data:
 javascript
-
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
